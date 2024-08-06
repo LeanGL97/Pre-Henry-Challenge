@@ -4,7 +4,6 @@
   código dentro de las funciones ya definidas. 
   No comentar la funcion 
 */
-function filtrar(funcion) {
   // Escribi una función filtrar en el prototipo de Arrays,
   // que recibe una funcion (callback) que devuelve true o false.
   // filtrar los elementos de ese arreglo en base al resultado de esa funcion
@@ -25,8 +24,17 @@ function filtrar(funcion) {
   //   return p.price >= 50;
   // }) => [{price: 100, name:'tv'}]
 
-};
-
+  function filtrar(array, comparador) {
+    const resultado = [];
+  
+    for (let i = 0; i < array.length; i++) {
+      if (comparador(array[i])) {  
+        resultado.push(array[i]);  
+      }
+    }
+  
+    return resultado;
+  }
 // No modifiques nada debajo de esta linea //
 
 module.exports = filtrar

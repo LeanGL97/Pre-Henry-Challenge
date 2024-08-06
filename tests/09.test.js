@@ -1,6 +1,6 @@
 const filtrar = require('../09.js');
 
-var personas =[
+var personas = [
   {
     nombre: 'Emi',
     edad: 21,
@@ -42,13 +42,14 @@ var personas =[
   },
 ];
 
-
 describe('Filter', function() {
-  filtrar();
   it('should filter', function() {
-    expect(personas.filtrar(p => p.edad <= 22).length).toBe(2);
-  })
+    const resultado = filtrar(personas, p => p.edad <= 22);
+    expect(resultado.length).toBe(2);
+  });
+
   it('should filter ok', function() {
-    expect(personas.filtrar(p => p.edad > 50).length).toBe(0);
-  })
-})
+    const resultado = filtrar(personas, p => p.edad > 50);
+    expect(resultado.length).toBe(0);
+  });
+});
